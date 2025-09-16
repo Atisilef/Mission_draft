@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(145deg, #5b5c5d, #585a5b);
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+  /* add these for vertical centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.app-header {
+  color: rgb(243, 234, 234);
+  padding: 40px;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+/* Page Styles */
+.page {
+  display: none;
+  min-height: 100vh;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Specific to Page 1 home card */
+#page-home .home-card {
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+}
+
+#page-home .home-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 20px; /* space between image and h3 */
+}
+
+#page-home .home-card h3 {
+  color: #f3f3f3;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Card Container */
+#page-issue-type .card-container {
+  background-color: #2b3a81;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Individual Card Styles */
+#page-issue-type .card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex: 1 1 150px; /* Responsive width */
+  max-width: 200px;
+  width: auto;
+}
+
+/* Container for Page 3 */
+#page-issue-details .issue-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  gap: 20px; /* space between elements */
+  background-color: #2b3a81; /* optional: container background */
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px; /* container width */
+  margin: 0 auto; /* center on page */
+}
+
+/* Textarea styling */
+#page-issue-details textarea {
+  width: 100%; /* fill container width */
+  min-height: 150px; /* make bigger */
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical; /* allow vertical resizing */
+}
+
+/* File input styling */
+#page-issue-details input[type="file"] {
+  width: 100%;
+}
+
+/* Navigation buttons in container */
+#page-issue-details .navigation button {
+  width: 120px; /* consistent button width */
+}
+
+/* Card plus drag&drop frame */
+/* Card container for page 3*/
+#page-issue-details .issue-details-card {
+  background-color: #2b3a81;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Textarea styling */
+#page-issue-details textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+/* Drag & drop frame */
+#drop-zone {
+  width: 100%;
+  min-height: 150px;
+  border: 2px dashed #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: rgba(255,255,255,0.05);
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+#drop-zone input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
+/* Navigation buttons */
+#page-issue-details .navigation {
+  display: flex;
+  gap: 20px;
+}
+
+#page-issue-details .navigation button {
+  width: 120px;
+  padding: 10px 0;
+}
+
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+/* Navigation Buttons */
+.navigation {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #0077cc;
+  color: white;
+  font-size: 1rem;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+
+#map {
+  width: 100%;
+  height: 500px; /* must set height or map won't appear */
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-buttons {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.confirm-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}

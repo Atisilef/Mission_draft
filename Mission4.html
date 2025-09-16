@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title shown in brower tab -->
+  <title>FixIt App</title> 
+  <link rel="stylesheet" href="Mission4.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+
+<body>
+  <!-- Main container for the whole app -->
+  <div class="app-container">
+
+    <!-- Page 1: Home -->
+    <section class="page active" id="page-home"> <!--First screen which is the home page-->
+      <h1 class="app-header">WELCOME TO FixIt</h1> <!--Main heading-->
+      <div class="card home-card"> <!--Home card containing logo and intro-->
+        <div class="card-header">
+          <img src="image/mineFixIt.jpg" alt="FixIt Logo" class="home-logo">
+        </div>
+        <h3>"If it's broken, dirty or dangerous - let us know. FixIt makes reporting easy."</h3><br><br>
+        <button onclick="nextPage()">Let's Get Started</button> <!--a button goes to the next page-->
+      </div>
+    </section>
+
+    <!-- Page 2: Select Issue Type -->
+    <section class="page" id="page-issue-type">
+      <h1 class="app-header"> SELECT ISSUE TYPE</h1> <!--Page heading-->
+
+      <!-- Container holding all issue cards -->
+      <div class="card-container">
+        <!-- Individual issue card -->
+        <div class="card" onclick="selectIssue('Graffiti')">
+          <img src="image/graffiti.png" alt="Graffiti">
+          <h3>Graffiti</h3>
+        </div>
+        <div class="card" onclick="selectIssue('Pothole')">
+          <img src="image/potholes.jpg" alt="Pothole">  
+          <h3>Pothole</h3>
+        </div>
+        <div class="card" onclick="selectIssue('Streetlight')">
+          <img src="image/broken streetlight.jpg" alt="Streetlight">
+          <h3>Broken Streetlight</h3>
+        </div>
+        <div class="card" onclick="selectIssue('Trash')">
+          <img src="image/trash.jpg" alt="Trash">
+          <h3>Trash</h3>
+        </div>
+       
+      </div><br><br>
+
+      <!-- Navigation buttons -->
+      <div class="navigation">
+        <button onclick="prevPage()">Back</button>
+      </div>
+    </section>
+
+
+    <!-- Page 3: Enter Issue Details -->
+    <section class="page" id="page-issue-details">
+      <h1 class="app-header">Issue Details</h1>
+
+      <!-- Container for the form elements -->
+       <div class="issue-details-card">
+        <textarea id="issue-description" rows="6" placeholder="Describe the issue..."></textarea> <!--issue description-->
+
+        <!-- Drag&Drop picture frame -->
+         <div id="drop-zone">
+          <p>Drag&Drop Picture Here</p>
+          <input type="file" id="issue-photo" accept="image/*">
+         </div>
+      
+         <!-- Navigation buttons -->
+      <div class="navigation">
+        <button onclick="prevPage()">Back</button>
+        <button onclick="nextPage()">Next</button>
+       </div>
+      </div>
+    </section>
+
+    <!-- Page 4: Add Location -->
+    <section class="page" id="page-location">
+      <h1 class="app-header">Add Location</h1>
+      <input type="text" id="address-input" placeholder="Enter address">
+      <button onclick="findAddress()">Find Address</button>
+      <div id="map"></div> <!--map container (leaflet.js will load here)-->
+      <div class="navigation">
+        <button onclick="prevPage()">Back</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    </section>
+
+    <!-- Page 5: Contact Details -->
+    <section class="page" id="page-contact">
+      <h1 class="app-header">Contact Details</h1>
+      <!-- grouped container -->
+       <div class="card contact-card">
+        <p>Do you want to report anonymously or share your details?</p>
+       
+      
+      <button onclick="reportAnonymous()">Report Anonymously</button>
+      <button onclick="shareDetails()">Report & Share Details</button>
+      <!-- Hidden form (appears only if user shares details) -->
+      <div id="contact-form" class="hidden">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <button onclick="submitReport()">Submit Report</button>
+      </div>
+   </div>
+    </section>
+
+    <!-- Page 6: Confirmation / Thank You -->
+    <section class="page" id="page-confirmation">
+      <h1 class="app-header">Thank You!</h1>
+      <!-- group container -->
+       <div class="confirm-card">
+         <!-- Hidden until report is submitted -->
+      <p id="reference-container" class="hidden">This is to confirm that your report has been logged on. We will update you! <br>Your reference number: <span id="reference-number"></span></p>
+    </section>
+        
+       </div>
+  </div>
+
+  <!-- link to Javasript file that controls navigation and functionality -->
+   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="Mission4.js"></script>
+</body>
+</html>
